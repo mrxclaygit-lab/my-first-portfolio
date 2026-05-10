@@ -1,0 +1,61 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: #1e293b;
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul a { color: white; text-decoration: none; font-weight: bold; }
+
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(45deg, #1e293b, #334155);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 5%;
+    display: none; /* Kita sembunyikan dulu, munculkan pakai JS nanti */
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #38bdf8;
+    transition: 0.3s;
+}
+
+.skill-card:hover { transform: translateY(-10px); }
+
+/* Jika layar lebih lebar dari 768px (seperti Tablet atau Laptop) */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3rem; /* Tulisan jadi lebih besar di layar lebar */
+    }
+
+    nav {
+        padding: 20px 10%; /* Margin samping lebih luas */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tampilan jadi 3 kolom sejajar */
+    }
+}
+
